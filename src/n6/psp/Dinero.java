@@ -21,7 +21,7 @@ public class Dinero extends Thread{
     
   synchronized void ingreso(){
       inicial++;
-      System.out.println("  Se ingreso dinero ");
+     
       
       
   }
@@ -29,7 +29,7 @@ public class Dinero extends Thread{
     
     synchronized void extraer(){
        inicial--;
-        System.out.println("Se saco dinero de la caja");
+       
         
     }
     
@@ -44,14 +44,14 @@ public class Dinero extends Thread{
         if ("Extraccion".equals(getName())){
             for (int i = 0; i < 5; i++) {
                 extraer();
-                System.out.println("Pagamos "+getInicial());
+                System.out.println("Pago ---"+" Nos queda "+getInicial());
                 
             }
         }
         if ("Ingreso".equals(getName())){
             for (int i = 0; i < 10; i++) {
                 ingreso();
-                System.out.println("Compran "+getInicial());
+                System.out.println("Compran ---"+" Nos queda "+getInicial());
             }
         }
         
