@@ -1,12 +1,17 @@
 
 package n6.psp;
 
+
 /**
  *
  * @author julian
  */
 public class Dinero extends Thread{
-    public double inicial=2000;
+    /**
+     * En este ejemplo tendria mas sentido pero ne sincronizar la variable
+     */
+    public double inicial=0;
+    
    
 
     public Dinero(String name) {
@@ -44,14 +49,14 @@ public class Dinero extends Thread{
         if ("Extraccion".equals(getName())){
             for (int i = 0; i < 5; i++) {
                 extraer();
-                System.out.println("Pago ---"+" Nos queda "+getInicial());
+                System.out.println("Pago (EXTRAER) ---"+" Nos queda "+getInicial());
                 
             }
         }
         if ("Ingreso".equals(getName())){
             for (int i = 0; i < 10; i++) {
                 ingreso();
-                System.out.println("Compran ---"+" Nos queda "+getInicial());
+                System.out.println("Compran (INGRESO) ---"+" Nos queda "+getInicial());
             }
         }
         
